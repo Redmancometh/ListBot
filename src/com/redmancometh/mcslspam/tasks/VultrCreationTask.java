@@ -25,7 +25,7 @@ public class VultrCreationTask implements Callable<Integer>
         CloseableHttpResponse response = null;
         try
         {
-            response = client.execute(ApacheUtil.buildPost("https://api.vultr.com/v1/server/create?api_key=M4vDC0L43RCbkuloi4nwmu", new Pair("DCID", "24"), new Pair("VPSPLANID", "29"), new Pair("OSID", "161")));
+            response = client.execute(ApacheUtil.buildPost("https://api.vultr.com/v1/server/create?api_key=APIKEYHERE", new Pair("DCID", "24"), new Pair("VPSPLANID", "29"), new Pair("OSID", "161")));
             HttpEntity entity = response.getEntity();
             int subID = Integer.parseInt(EntityUtils.toString(entity).split(":")[1].replace("\"", "").replace("}", ""));
             EntityUtils.consume(entity);
